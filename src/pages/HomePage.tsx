@@ -1,24 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Contents from "../component/Contents";
-import styled from "styled-components";
 import Header from "../component/Header";
+import styled from "styled-components";
 
 const HomePage = () => {
-
-    return (
-        <Container>
+  return (
+    <Container>
+        <HeaderWrapper>
             <Header />
-            <Contents />
-        </Container>
-    );
-}
+        </HeaderWrapper>
+        <Contents />
+    </Container>
+  );
+};
 
 export default HomePage;
 
 const Container = styled.div`
   display: flex;
-  width: 100vw;
   flex-direction: column;
   align-items: center;
   position: relative;
+`;
+
+const HeaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 헤더가 다른 요소 위에 나타나도록 z-index 설정 */
 `;
